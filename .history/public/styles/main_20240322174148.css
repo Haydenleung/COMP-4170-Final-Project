@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+html {
+    background-color: #FAFAFA;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.photo {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+}
+
+.home-photo {
+    height: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.home-login {
+    min-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 8rem;
+}
+
+.logo {
+    width: 10rem;
+    margin-bottom: 4rem;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: grey; */
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.login-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.forminput {
+    width: 100%;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+    font-size: 1em;
+}
+
+.forminput:focus {
+    outline: none;
+}
+
+.submitbtn,
+.regbtn {
+    width: 100%;
+    height: 3rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitbtn {
+    background-color: #73AC92;
+}
+
+.regbtn {
+    background-color: #969696
+}
+
+.regisblue {
+    background-color: #3EA1DB;
+}
+
+/* Main */
+
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 5rem;
+}
+
+.main-subcontainer {
+    width: 100%;
+    height: 20rem;
+    background-color: white;
+    border-radius: 15pt;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    padding: 2rem'
+
+}
+
+.main-content {
+    width: 100%;
+}
+
+h4 {
+    font-size: 2em;
+}
+
+h5 {
+    font-size: 1.2em;
+    font-weight: 400;
+}

@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+
+    <div class="main-container">
+        <div class="main-subcontainer">
+            <div class="main-welcome">
+                <div class="main-greeting">
+                    <h3>Good Morning [User]</h3>
+                    <p>Welcome to our coffee subscription app's internal portal! Here, you can update your subscription
+                        preferences and customize your coffee selections to match your unique taste preferences. Enjoy
+                        the freedom to tailor your coffee experience exactly how you like it.</p>
+                </div>
+                <div class="main-feature">
+                    <a href="/edit" class="mainbtn chnpassword">Change Password</a>
+                    <a href="/" class="mainbtn logout">Log Out</a>
+                </div>
+            </div>
+            <div class="main-logo-container">
+                <img class="main-logo" src="/images/logo.png" alt="company logo" />
+            </div>
+        </div>
+        <div class="main-content">
+            <h4>Your Subscription</h4>
+            <div class="subscribe-section">
+                <h5>Subscription Preference</h5>
+                <div class="subscribe-container">
+                    <div class="sub-option">
+                        <div class="tick">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="50" fill="none" stroke="#429488" stroke-width="1" />
+                            </svg>
+                        </div>
+                        <img class="sub-icon" src="/images/week.svg" alt="icon" />
+                        <div class="sub-title">Weekly</div>
+                        <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi iaculis
+                            odio cum. Et
+                            cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                    </div>
+                    <div class="sub-option"></div>
+                    <div class="sub-option"></div>
+                </div>
+            </div>
+            <div class="coffee-section">
+                <h5>Pick Your Coffee in the next coming week:</h5>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
