@@ -234,6 +234,14 @@
                 }
             });
         });
+
+        const coffeeElements = document.getElementsByClassName('coffee');
+
+        for (let i = 0; i < coffeeElements.length; i++) {
+            coffeeElements[i].addEventListener('click', () => {
+                coffeeElements[i].classList.add('sub-selected')
+            })
+        }    
     </script>
 
 
