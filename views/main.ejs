@@ -237,19 +237,25 @@
 
         const coffeeElements = document.getElementsByClassName('coffee');
 
+        const selectedCoffeeCounterMax = 7;
+
+        let selectedCoffeeCounter = 0;
+
+
         for (let i = 0; i < coffeeElements.length; i++) {
 
             let selected = false
 
             coffeeElements[i].addEventListener('click', () => {
-
-                if(!selected) {
-                    coffeeElements[i].classList.add('sub-selected')
-                } else {
+                if(selected) {
                     coffeeElements[i].classList.remove('sub-selected')
+                    selectedCoffeeCounter = selectedCoffeeCounter - 1
+                    selected = !selected
+                } else if (selectedCoffeeCounter < selectedCoffeeCounterMax) {
+                    coffeeElements[i].classList.add('sub-selected')
+                    selectedCoffeeCounter = selectedCoffeeCounter + 1   
+                    selected = !selected
                 }
-
-                selected = !selected
             })
         }    
     </script>
