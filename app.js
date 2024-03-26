@@ -151,7 +151,6 @@ app.post("/", async (req, res) => {
   }
 });
 
-
 app.post("/main", async (req, res) => {
   const username = savedUsername;
   const useroption = req.body.useroption;
@@ -180,6 +179,46 @@ app.post("/main", async (req, res) => {
   }
 
 });
+
+app.get("/edit", (req, res) => {
+  if (!savedUsername) {
+    return res.redirect("/main");
+  }
+  res.render("edit.ejs", { username: savedUsername });
+});
+
+app.post("/change-password", async (req, res) => {
+  const { oldPassword, newPassword, confirmNewPassword } = req.body;
+  const username = savedUsername;
+
+  if (!username) {
+    return res.status(403).send("Not logged in");
+  }
+
+  if (newPassword !== confirmNewPassword) {
+    return res.render("edit.ejs", { username: savedUsername, errorMessage: "New passwords DID NOT match!" });
+  }
+
+  try {
+    const userResult = await db.query("SELECT * FROM users WHERE username = $1", [username]);
+    if (userResult.rows.length === 0) {
+      return res.render("edit.ejs", { username: savedUsername, errorMessage: "User not found." });
+    }
+
+    const user = userResult.rows[0];
+    if (user.password !== oldPassword) {
+      return res.render("edit.ejs", { username: savedUsername, errorMessage: "Old password is INCORRECT!" });
+    }
+
+    await db.query("UPDATE users SET password = $1 WHERE username = $2", [newPassword, username]);
+    res.render("edit.ejs", { username: savedUsername, successMessage: "Password changed successfully :)" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+  res.render('main.ejs')
+});
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

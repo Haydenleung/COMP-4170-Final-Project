@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<div class="edit-container">
+    <div class="main-logo-container">
+        <img class="main-logo" src="/images/logo.png" alt="Company Logo" />
+    </div>
+    <h2 class="edit-title">Change Password</h2>
+    <div class="main-greeting">
+        <h3>Secure Your Account <%= username %>!</h3>
+        <p>Your security matters. Enter your <b class="form-group-old">current password</b>, then your <b class="form-group-new">new password</b> twice!</p>
+    </div>
+
+    <form action="/change-password" method="POST" class="edit-form">
+        <div class="form-group">
+            <label for="oldPassword" class="form-group-old">Old Password:</label>
+            <input type="password" id="oldPassword" name="oldPassword" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="newPassword" class="form-group-new">New Password:</label>
+            <input type="password" id="newPassword" name="newPassword" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="confirmNewPassword" class="form-group-new">Confirm New Password:</label>
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" required class="form-control">
+        </div>
+
+        <% if(typeof errorMessage !== 'undefined') { %>
+            <div class="alert alert-danger">
+                <%= errorMessage %>
+            </div>
+        <% } %>
+        <% if(typeof successMessage !== 'undefined') { %>
+            <div class="alert alert-success">
+                <%= successMessage %>
+            </div>
+        <% } %>
+
+        <button type="submit" class="btn btn-primary">CHANGE PASSWORD</button>
+        <a href="/" class="btn btn-secondary">BACK</a>
+    </form>
+</div>
+
+<%- include('partials/footer') %>
