@@ -180,6 +180,11 @@ app.post("/main", async (req, res) => {
 
 });
 
+app.post("/goback", (req, res) => {
+  res.render('main.ejs', { username: savedUsername, defaultoption: savedOption, datePeriod: dateText, coffeeoption: savedCoffee });
+});
+
+
 app.get("/edit", (req, res) => {
   if (!savedUsername) {
     return res.redirect("/main");

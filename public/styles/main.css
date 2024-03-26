@@ -229,11 +229,13 @@ h3 {
 
 .main-logo-container {
     padding: 2rem;
-    width: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .main-logo {
-    width: 100%;
+    width: 40%;
 }
 
 .main-content {
@@ -453,30 +455,30 @@ h5 {
 .edit-form {
     display: flex;
     flex-direction: column;
-    gap: 30px; 
+    gap: 30px;
 }
 
 .edit-form .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .edit-form label {
     font-weight: bold;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .edit-form input[type="password"] {
-    width: 100%; 
-    padding: 12px; 
+    width: 100%;
+    padding: 12px;
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 16px;
 }
 
 .edit-form .btn-primary {
-    background-color: #73AC92; 
+    background-color: #73AC92;
     color: white;
     padding: 12px;
     border: none;
@@ -485,7 +487,7 @@ h5 {
 }
 
 .edit-form .btn-secondary {
-    background-color: #545454; 
+    background-color: #545454;
     color: white;
     padding: 12px;
     border: none;
@@ -494,24 +496,25 @@ h5 {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    margin-top: 2rem;
 }
 
-.alert{
+.alert {
     font-size: 20px;
 }
 
-.alert-danger{
+.alert-danger {
     color: #C44536;
 }
 
-.alert-success{
+.alert-success {
     color: #2E7468;
 }
 
-.form-group-new{
+.form-group-new {
     color: #2E7468;
 }
 
-.form-group-old{
+.form-group-old {
     color: #C44536;
 }
