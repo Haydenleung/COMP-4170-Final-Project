@@ -2,131 +2,195 @@
 
 
     <div class="main-container">
-        <div class="main-subcontainer">
-            <div class="main-welcome">
-                <div class="main-greeting">
-                    <h3>Good Morning [User]</h3>
-                    <p>Welcome to our coffee subscription app's internal portal! Here, you can update your subscription
-                        preferences and customize your coffee selections to match your unique taste preferences. Enjoy
-                        the freedom to tailor your coffee experience exactly how you like it.</p>
-                </div>
-                <div class="main-feature">
-                    <a href="/edit" class="mainbtn chnpassword">Change Password</a>
-                    <a href="/" class="mainbtn logout">Log Out</a>
-                </div>
+        <% if(typeof updateMessage !=='undefined' ) { %>
+            <div class="update-message">
+                <%= updateMessage %>
             </div>
-            <div class="main-logo-container">
-                <img class="main-logo" src="/images/logo.png" alt="company logo" />
-            </div>
-        </div>
-        <div class="main-content">
-            <h4>Your Subscription</h4>
-            <div class="subscribe-section">
-                <h5>Subscription Preference</h5>
-                <div class="subscribe-container">
-                    <div class="sub-option sub-selected">
-                        <div class="tick">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488" stroke-width="5" />
-                            </svg>
-                            <img class="sub-tick" src="/images/tick.svg" alt="icon" />
+            <% } %>
+                <div class="main-subcontainer">
+                    <div class="main-welcome">
+                        <div class="main-greeting">
+                            <h3>Good Morning <span class="username">
+                                    <%= username %>
+                                </span>,
+                            </h3>
+                            <p>Welcome to our coffee subscription app's internal portal! Here, you can update your
+                                subscription
+                                preferences and customize your coffee selections to match your unique taste preferences.
+                                Enjoy
+                                the freedom to tailor your coffee experience exactly how you like it.</p>
                         </div>
-                        <img class="sub-icon" src="/images/week.svg" alt="icon" />
-                        <div class="sub-title">Weekly</div>
-                        <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi iaculis
-                            odio cum. Et
-                            cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
-                    </div>
-                    <div class="sub-option">
-                        <div class="tick">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
-                            </svg>
-                            <img class="sub-tick" src="/images/tick.svg" alt="icon" />
+                        <div class="main-feature">
+                            <a href="/edit" class="mainbtn chnpassword">Change Password</a>
+                            <a href="/" class="mainbtn logout">Log Out</a>
                         </div>
-                        <img class="sub-icon" src="/images/month.svg" alt="icon" />
-                        <div class="sub-title">Monthly</div>
-                        <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi iaculis
-                            odio cum. Et
-                            cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
                     </div>
-                    <div class="sub-option">
-                        <div class="tick">
-                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
-                            </svg>
-                            <img class="sub-tick" src="/images/tick.svg" alt="icon" />
-                        </div>
-                        <img class="sub-icon" src="/images/annual.svg" alt="icon" />
-                        <div class="sub-title">Annually</div>
-                        <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi iaculis
-                            odio cum. Et
-                            cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                    <div class="main-logo-container">
+                        <img class="main-logo" src="/images/logo.png" alt="company logo" />
                     </div>
+                </div>
+                <div class="main-content">
+                    <h4>Your Subscription</h4>
+                    <div class="subscribe-section">
+                        <h5>Subscription Preference</h5>
+                        <div class="subscribe-container">
+                            <div class="sub-option sub-selected" data-option="1">
+                                <div class="tick">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488"
+                                            stroke-width="5" />
+                                    </svg>
+                                    <img class="sub-tick" src="/images/tick.svg" alt="icon" />
+                                </div>
+                                <img class="sub-icon" src="/images/week.svg" alt="icon" />
+                                <div class="sub-title">Weekly</div>
+                                <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi
+                                    iaculis
+                                    odio cum. Et
+                                    cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                            </div>
+                            <div class="sub-option" data-option="2">
+                                <div class="tick">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
+                                    </svg>
+                                    <img class="sub-tick" src="/images/tick.svg" alt="icon" />
+                                </div>
+                                <img class="sub-icon" src="/images/month.svg" alt="icon" />
+                                <div class="sub-title">Monthly</div>
+                                <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi
+                                    iaculis
+                                    odio cum. Et
+                                    cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                            </div>
+                            <div class="sub-option" data-option="3">
+                                <div class="tick">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
+                                    </svg>
+                                    <img class="sub-tick" src="/images/tick.svg" alt="icon" />
+                                </div>
+                                <img class="sub-icon" src="/images/annual.svg" alt="icon" />
+                                <div class="sub-title">Annually</div>
+                                <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi
+                                    iaculis
+                                    odio cum. Et
+                                    cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                            </div>
 
+                        </div>
+                    </div>
+                    <div class="coffee-section">
+                        <h5>Pick Your Coffee in the next coming week:
+                            <% if(typeof datePeriod !=='undefined' ) { %>
+                                <%= datePeriod %>
+                                    <% } %>
+                        </h5>
+                        <div class="coffee-option">
+                            <div class="coffee" id="coffeeA">
+                                <img class="coffee-image" src="/images/03.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeB">
+                                <img class="coffee-image" src="/images/02.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeC">
+                                <img class="coffee-image" src="/images/05.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeD">
+                                <img class="coffee-image" src="/images/04.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeE">
+                                <img class="coffee-image" src="/images/07.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeF">
+                                <img class="coffee-image" src="/images/06.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeG">
+                                <img class="coffee-image" src="/images/01.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeH">
+                                <img class="coffee-image" src="/images/04.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeI">
+                                <img class="coffee-image" src="/images/06.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeJ">
+                                <img class="coffee-image" src="/images/02.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeK">
+                                <img class="coffee-image" src="/images/05.png" alt="coffee image" />
+                            </div>
+                            <div class="coffee" id="coffeeL">
+                                <img class="coffee-image" src="/images/02.png" alt="coffee image" />
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/main" method="POST" class="form-main">
+                        <% if (typeof defaultoption !=='undefined' ) { %>
+                            <input class="user-option" name="useroption" value="<%= defaultoption %>">
+                            <% } else { %>
+                                <input class="user-option" name="useroption">
+                                <% } %>
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxA" value="A">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxB" value="B">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxC" value="C">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxD" value="D">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxE" value="E">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxF" value="F">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxG" value="G">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxH" value="H">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxI" value="I">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxJ" value="J">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxK" value="K">
+                                    <input type="checkbox" name="coffeecheckbox" id="checkboxL" value="L">
+                                    <button type="submit" class="savebtn">Save Your Preferences</button>
+                                    <input class="user-option-coffee" name="user-option-coffee" id="user-option-coffee"
+                                        value="<%= coffeeoption %>">
+                                    <% if (coffeeoption !==null) { %>
+                                        <% if (!Array.isArray(coffeeoption)) { %>
+                                            <% coffeeoption=[coffeeoption]; %>
+                                                <% } %>
+                                                    <% coffeeoption.forEach(function(item) { %>
+                                                        <%= item %>
+                                                            <% }); %>
+                                                                <% } %>
+                    </form>
                 </div>
-            </div>
-            <div class="coffee-section">
-                <h5>Pick Your Coffee in the next coming week:</h5>
-                <div class="coffee-option">
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/03.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/02.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/05.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/04.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/07.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/06.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/01.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/04.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/06.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/02.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/05.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/02.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/07.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/06.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/05.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/01.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/03.png" alt="coffee image" />
-                    </div>
-                    <div class="coffee">
-                        <img class="coffee-image" src="/images/04.png" alt="coffee image" />
-                    </div>
-                </div>
-            </div>
-            <a href="/" class="savebtn">Save Your Preferences</a>
-        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.sub-option').forEach(option => {
+            option.addEventListener('click', function () {
+                const optionValue = this.getAttribute('data-option');
+                document.querySelector('.user-option').value = optionValue;
+            });
+        });
+        for (let i = 0; i < 12; i++) {
+            const coffeepic = document.getElementById(`coffee${String.fromCharCode(65 + i)}`);
+            const checkbox = document.getElementById(`checkbox${String.fromCharCode(65 + i)}`);
+            coffeepic.addEventListener('click', function () {
+                const checkednumber = document.querySelectorAll('input[type="checkbox"]:checked');
+                console.log(checkednumber.length);
+                if (checkednumber.length >= 7) {
+                    checkbox.checked = false;
+                } else {
+                    checkbox.checked = !checkbox.checked;
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var inputValue = document.getElementById('user-option-coffee').value;
+            var letters = inputValue.split(',');
+
+            letters.forEach(function (letter) {
+                var checkbox = document.getElementById('checkbox' + letter);
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+            });
+        });
+    </script>
+
+
 
     <%- include('partials/footer') %>
