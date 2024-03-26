@@ -34,11 +34,13 @@
                     <div class="subscribe-section">
                         <h5>Subscription Preference</h5>
                         <div class="subscribe-container">
-                            <div class="sub-option sub-selected" data-option="1">
+                            <div class="sub-option sub-selected" id="sub-selected-1" data-option="1">
                                 <div class="tick">
-                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488"
-                                            stroke-width="5" />
+                                    <svg class='check' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488" stroke-width="5" />
+                                    </svg>
+                                    <svg class='uncheck' display='none' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
                                     </svg>
                                     <img class="sub-tick" src="/images/tick.svg" alt="icon" />
                                 </div>
@@ -49,9 +51,12 @@
                                     odio cum. Et
                                     cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
                             </div>
-                            <div class="sub-option" data-option="2">
+                            <div class="sub-option" id="sub-selected-2" data-option="2">
                                 <div class="tick">
-                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class='check' display='none' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488" stroke-width="5" />
+                                    </svg>
+                                    <svg class='uncheck' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
                                     </svg>
                                     <img class="sub-tick" src="/images/tick.svg" alt="icon" />
@@ -63,9 +68,12 @@
                                     odio cum. Et
                                     cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
                             </div>
-                            <div class="sub-option" data-option="3">
+                            <div class="sub-option" id="sub-selected-3" data-option="3">
                                 <div class="tick">
-                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class='check' display='none' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488" stroke-width="5" />
+                                    </svg>
+                                    <svg class='uncheck'  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
                                     </svg>
                                     <img class="sub-tick" src="/images/tick.svg" alt="icon" />
@@ -186,6 +194,43 @@
                 var checkbox = document.getElementById('checkbox' + letter);
                 if (checkbox) {
                     checkbox.checked = true;
+                }
+            });
+        });
+        
+        const selectBoxes = document.querySelectorAll('[id^="sub-selected"]');
+
+        selectBoxes.forEach(element => {
+
+            const documentUnchecks = document.getElementsByClassName('uncheck')
+            const documentChecks = document.getElementsByClassName('check')
+
+            element.addEventListener('click', function() {
+                
+                for (let i = 0; i < selectBoxes.length; i++) {
+                    selectBoxes[i].classList.remove('sub-selected');
+                }
+
+                this.classList.add('sub-selected')
+
+                for (let i = 0; i < documentUnchecks.length; i++) {
+                    documentChecks[i].style.display = 'none'
+                }
+
+                for (let i = 0; i < documentChecks.length; i++) {
+                    documentUnchecks[i].style.display = 'block'
+                }
+
+                const nestedUnchecks = element.getElementsByClassName('uncheck')
+
+                for (let i = 0; i < nestedUnchecks.length; i++) {
+                    nestedUnchecks[i].style.display = 'none'
+                }
+                
+                const nestedChecks = element.getElementsByClassName('check')
+
+                for (let i = 0; i < nestedChecks.length; i++) {
+                    nestedChecks[i].style.display = 'block'
                 }
             });
         });
