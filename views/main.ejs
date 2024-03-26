@@ -238,8 +238,18 @@
         const coffeeElements = document.getElementsByClassName('coffee');
 
         for (let i = 0; i < coffeeElements.length; i++) {
+
+            let selected = false
+
             coffeeElements[i].addEventListener('click', () => {
-                coffeeElements[i].classList.add('sub-selected')
+
+                if(!selected) {
+                    coffeeElements[i].classList.add('sub-selected')
+                } else {
+                    coffeeElements[i].classList.remove('sub-selected')
+                }
+
+                selected = !selected
             })
         }    
     </script>
