@@ -34,27 +34,29 @@
                     <div class="subscribe-section">
                         <h5>Subscription Preference</h5>
                         <div class="subscribe-container">
-                            <div class="sub-option sub-selected" id="sub-selected-1" data-option="1">
+                            <div class="sub-option" id="sub-selected-1" data-option="1">
                                 <div class="tick">
-                                    <svg class='check' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488" stroke-width="5" />
+                                    <svg class='check' display='none' viewBox="0 0 100 100"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488"
+                                            stroke-width="5" />
                                     </svg>
-                                    <svg class='uncheck' display='none' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class='uncheck' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
                                     </svg>
                                     <img class="sub-tick" src="/images/tick.svg" alt="icon" />
                                 </div>
                                 <img class="sub-icon" src="/images/week.svg" alt="icon" />
                                 <div class="sub-title">Weekly</div>
-                                <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi
-                                    iaculis
-                                    odio cum. Et
-                                    cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                                <p class="sub-body">Elevate your coffee game with weekly deliveries of premium beans,
+                                    ensuring a fresh brew whenever you need it.</p>
                             </div>
                             <div class="sub-option" id="sub-selected-2" data-option="2">
                                 <div class="tick">
-                                    <svg class='check' display='none' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488" stroke-width="5" />
+                                    <svg class='check' display='none' viewBox="0 0 100 100"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488"
+                                            stroke-width="5" />
                                     </svg>
                                     <svg class='uncheck' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
@@ -63,107 +65,115 @@
                                 </div>
                                 <img class="sub-icon" src="/images/month.svg" alt="icon" />
                                 <div class="sub-title">Monthly</div>
-                                <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi
-                                    iaculis
-                                    odio cum. Et
-                                    cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                                <p class="sub-body">Explore the world of coffee with monthly deliveries of curated
+                                    blends, offering new flavors to enjoy each month.</p>
                             </div>
                             <div class="sub-option" id="sub-selected-3" data-option="3">
                                 <div class="tick">
-                                    <svg class='check' display='none' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488" stroke-width="5" />
+                                    <svg class='check' display='none' viewBox="0 0 100 100"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="50" cy="50" r="45" fill="#429488" stroke="#429488"
+                                            stroke-width="5" />
                                     </svg>
-                                    <svg class='uncheck'  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class='uncheck' viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="50" cy="50" r="45" fill="none" stroke="#C0C0C0" stroke-width="5" />
                                     </svg>
                                     <img class="sub-tick" src="/images/tick.svg" alt="icon" />
                                 </div>
                                 <img class="sub-icon" src="/images/annual.svg" alt="icon" />
                                 <div class="sub-title">Annually</div>
-                                <p class="sub-body">Lorem ipsum dolor sit amet consectetur. Purus in viverra tortor mi
-                                    iaculis
-                                    odio cum. Et
-                                    cursus vitae gravida quam sollicitudin nunc vehicula. Enim maecenas.</p>
+                                <p class="sub-body">Commit to coffee excellence for a year with our annual plan,
+                                    guaranteeing a constant supply of top-quality beans tailored to your taste.</p>
                             </div>
 
                         </div>
                     </div>
                     <div class="coffee-section">
-                        <h5>Pick Your Coffee in the next coming week:
-                            <% if(typeof datePeriod !=='undefined' ) { %>
-                                <%= datePeriod %>
+                        <div class="coffee-section-row">
+                            <h5>Pick Your Coffee in the next coming week:
+                                <% if(typeof datePeriod !=='undefined' ) { %>
+                                    <span class="datePeriod">
+                                        <%= datePeriod %>
+                                    </span>
                                     <% } %>
-                        </h5>
-                        <div class="coffee-option">
-                            <div class="coffee" id="coffeeA">
-                                <img class="coffee-image" src="/images/03.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeB">
-                                <img class="coffee-image" src="/images/02.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeC">
-                                <img class="coffee-image" src="/images/05.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeD">
-                                <img class="coffee-image" src="/images/04.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeE">
-                                <img class="coffee-image" src="/images/07.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeF">
-                                <img class="coffee-image" src="/images/06.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeG">
-                                <img class="coffee-image" src="/images/01.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeH">
-                                <img class="coffee-image" src="/images/04.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeI">
-                                <img class="coffee-image" src="/images/06.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeJ">
-                                <img class="coffee-image" src="/images/02.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeK">
-                                <img class="coffee-image" src="/images/05.png" alt="coffee image" />
-                            </div>
-                            <div class="coffee" id="coffeeL">
-                                <img class="coffee-image" src="/images/02.png" alt="coffee image" />
-                            </div>
+                            </h5>
+                            <div><span id="selectedNumber">0</span> / 7</div>
                         </div>
                     </div>
-                    <form action="/main" method="POST" class="form-main">
-                        <% if (typeof defaultoption !=='undefined' ) { %>
-                            <input class="user-option" name="useroption" value="<%= defaultoption %>">
-                            <% } else { %>
-                                <input class="user-option" name="useroption">
-                                <% } %>
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxA" value="A">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxB" value="B">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxC" value="C">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxD" value="D">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxE" value="E">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxF" value="F">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxG" value="G">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxH" value="H">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxI" value="I">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxJ" value="J">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxK" value="K">
-                                    <input type="checkbox" name="coffeecheckbox" id="checkboxL" value="L">
-                                    <button type="submit" class="savebtn">Save Your Preferences</button>
-                                    <input class="user-option-coffee" name="user-option-coffee" id="user-option-coffee"
-                                        value="<%= coffeeoption %>">
-                                    <% if (coffeeoption !==null) { %>
-                                        <% if (!Array.isArray(coffeeoption)) { %>
-                                            <% coffeeoption=[coffeeoption]; %>
-                                                <% } %>
-                                                    <% coffeeoption.forEach(function(item) { %>
-                                                        <%= item %>
-                                                            <% }); %>
-                                                                <% } %>
-                    </form>
+                    <div class="coffee-option">
+                        <div class="coffee" id="coffeeA">
+                            <img class="coffee-image" src="/images/03.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeB">
+                            <img class="coffee-image" src="/images/02.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeC">
+                            <img class="coffee-image" src="/images/05.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeD">
+                            <img class="coffee-image" src="/images/04.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeE">
+                            <img class="coffee-image" src="/images/07.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeF">
+                            <img class="coffee-image" src="/images/06.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeG">
+                            <img class="coffee-image" src="/images/01.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeH">
+                            <img class="coffee-image" src="/images/04.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeI">
+                            <img class="coffee-image" src="/images/06.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeJ">
+                            <img class="coffee-image" src="/images/02.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeK">
+                            <img class="coffee-image" src="/images/05.png" alt="coffee image" />
+                        </div>
+                        <div class="coffee" id="coffeeL">
+                            <img class="coffee-image" src="/images/02.png" alt="coffee image" />
+                        </div>
+                    </div>
                 </div>
+                <form action="/main" method="POST" class="form-main">
+                    <% if (typeof defaultoption !=='undefined' ) { %>
+                        <input class="user-option" name="useroption" id="user-option" value="<%= defaultoption %>">
+                        <% } else { %>
+                            <input class="user-option" name="useroption" id="user-option">
+                            <% } %>
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxA" value="A"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxB" value="B"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxC" value="C"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxD" value="D"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxE" value="E"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxF" value="F"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxG" value="G"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxH" value="H"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxI" value="I"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxJ" value="J"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxK" value="K"
+                                    class="coffeecheckbox">
+                                <input type="checkbox" name="coffeecheckbox" id="checkboxL" value="L"
+                                    class="coffeecheckbox">
+                                <button type="submit" class="savebtn">Save Your Preferences</button>
+                                <input class="user-option-coffee" name="user-option-coffee" id="user-option-coffee"
+                                    value="<%= coffeeoption %>">
+                </form>
+    </div>
     </div>
 
     <script>
@@ -186,18 +196,7 @@
                 }
             });
         }
-        document.addEventListener('DOMContentLoaded', function () {
-            var inputValue = document.getElementById('user-option-coffee').value;
-            var letters = inputValue.split(',');
 
-            letters.forEach(function (letter) {
-                var checkbox = document.getElementById('checkbox' + letter);
-                if (checkbox) {
-                    checkbox.checked = true;
-                }
-            });
-        });
-        
         const selectBoxes = document.querySelectorAll('[id^="sub-selected"]');
 
         selectBoxes.forEach(element => {
@@ -205,30 +204,22 @@
             const documentUnchecks = document.getElementsByClassName('uncheck')
             const documentChecks = document.getElementsByClassName('check')
 
-            element.addEventListener('click', function() {
-                
+            element.addEventListener('click', function () {
                 for (let i = 0; i < selectBoxes.length; i++) {
                     selectBoxes[i].classList.remove('sub-selected');
                 }
-
                 this.classList.add('sub-selected')
-
                 for (let i = 0; i < documentUnchecks.length; i++) {
                     documentChecks[i].style.display = 'none'
                 }
-
                 for (let i = 0; i < documentChecks.length; i++) {
                     documentUnchecks[i].style.display = 'block'
                 }
-
                 const nestedUnchecks = element.getElementsByClassName('uncheck')
-
                 for (let i = 0; i < nestedUnchecks.length; i++) {
                     nestedUnchecks[i].style.display = 'none'
                 }
-                
                 const nestedChecks = element.getElementsByClassName('check')
-
                 for (let i = 0; i < nestedChecks.length; i++) {
                     nestedChecks[i].style.display = 'block'
                 }
@@ -236,28 +227,61 @@
         });
 
         const coffeeElements = document.getElementsByClassName('coffee');
-
         const selectedCoffeeCounterMax = 7;
+        var selectedCoffeeCounter = 0; // Initialize selectedCoffeeCounter
 
-        let selectedCoffeeCounter = 0;
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var optionValue = document.getElementById('user-option').value;
+            var optionbox = document.getElementById('sub-selected-' + optionValue);
+            optionbox.classList.add('sub-selected');
+            var documentUnchecks = document.getElementsByClassName('uncheck')
+            var documentChecks = document.getElementsByClassName('check')
+            documentUnchecks[optionValue - 1].style.display = 'none'
+            documentChecks[optionValue - 1].style.display = 'block'
+
+            var inputValue = document.getElementById('user-option-coffee').value;
+            if (inputValue) {
+                var letters = inputValue.split(',');
+
+                letters.forEach(function (letter) {
+                    var checkbox = document.getElementById('checkbox' + letter);
+                    if (checkbox) {
+                        checkbox.checked = true;
+                    }
+                    var coffeepic = document.getElementById('coffee' + letter);
+                    coffeepic.classList.add('sub-selected');
+                    selectedCoffeeCounter++;
+                    var selectedNum = document.getElementById('selectedNumber');
+                    selectedNum.innerText = selectedCoffeeCounter;
+                    console.log(selectedCoffeeCounter);
+                });
+            }
 
 
+        });
+
+        const selectedNum = document.getElementById('selectedNumber');
         for (let i = 0; i < coffeeElements.length; i++) {
-
-            let selected = false
-
+            let selected;
             coffeeElements[i].addEventListener('click', () => {
-                if(selected) {
-                    coffeeElements[i].classList.remove('sub-selected')
-                    selectedCoffeeCounter = selectedCoffeeCounter - 1
-                    selected = !selected
-                } else if (selectedCoffeeCounter < selectedCoffeeCounterMax) {
-                    coffeeElements[i].classList.add('sub-selected')
-                    selectedCoffeeCounter = selectedCoffeeCounter + 1   
-                    selected = !selected
+                if (coffeeElements[i].classList.contains('sub-selected')) {
+                    selected = true;
+                } else {
+                    selected = false;
                 }
-            })
-        }    
+                if (selected) {
+                    coffeeElements[i].classList.remove('sub-selected');
+                    selectedCoffeeCounter = selectedCoffeeCounter - 1;
+                    console.log(selectedCoffeeCounter);
+                } else if (selectedCoffeeCounter < selectedCoffeeCounterMax) {
+                    coffeeElements[i].classList.add('sub-selected');
+                    selectedCoffeeCounter = selectedCoffeeCounter + 1;
+                    console.log(selectedCoffeeCounter);
+                }
+                selectedNum.innerText = selectedCoffeeCounter;
+            });
+        }
     </script>
 
 

@@ -60,38 +60,43 @@ app.post("/register", async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  try {
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
-      email,
-    ]);
+  if (email !== "" && email !== null && username !== "" && username !== null && password !== "" && password !== null) {
 
-    const checkResultTwo = await db.query("SELECT * FROM users WHERE username = $1", [
-      username,
-    ]);
+    try {
+      const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
+        email,
+      ]);
 
-    if (checkResult.rows.length > 0) {
-      res.render("register.ejs", { errorMessage: "Email already exists" });
-    } else if (checkResultTwo.rows.length > 0) {
-      res.render("register.ejs", { errorMessage: "Username already exists" });
-    } else {
-      const result = await db.query(
-        "INSERT INTO users (email, username, password) VALUES ($1, $2, $3)",
-        [email, username, password]
-      );
-      const resultTwo = await db.query(
-        "INSERT INTO subscription (username, option) VALUES ($1, $2)",
-        [username, "1"]
-      );
-      const resultThree = await db.query(
-        "INSERT INTO coffee (username, dateperiod) VALUES ($1, $2)",
-        [username, dateText]
-      );
-      console.log(result);
-      console.log(resultTwo);
-      res.render("index.ejs", { successMessage: "Thanks for signing up. You can login now." });
+      const checkResultTwo = await db.query("SELECT * FROM users WHERE username = $1", [
+        username,
+      ]);
+
+      if (checkResult.rows.length > 0) {
+        res.render("register.ejs", { errorMessage: "Email already exists" });
+      } else if (checkResultTwo.rows.length > 0) {
+        res.render("register.ejs", { errorMessage: "Username already exists" });
+      } else {
+        const result = await db.query(
+          "INSERT INTO users (email, username, password) VALUES ($1, $2, $3)",
+          [email, username, password]
+        );
+        const resultTwo = await db.query(
+          "INSERT INTO subscription (username, option) VALUES ($1, $2)",
+          [username, "1"]
+        );
+        const resultThree = await db.query(
+          "INSERT INTO coffee (username, dateperiod) VALUES ($1, $2)",
+          [username, dateText]
+        );
+        console.log(result);
+        console.log(resultTwo);
+        res.render("index.ejs", { successMessage: "Thanks for signing up. You can login now." });
+      }
+    } catch (err) {
+      console.log(err);
     }
-  } catch (err) {
-    console.log(err);
+  } else {
+    res.render("register.ejs", { errorMessage: "Missing Information" });
   }
 });
 
@@ -99,45 +104,50 @@ app.post("/", async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  try {
-    const result = await db.query("SELECT * FROM users WHERE username = $1", [
-      username,
-    ]);
-    if (result.rows.length > 0) {
-      const user = result.rows[0];
-      const storedPassword = user.password;
+  if (username !== "" && username !== null && password !== "" && password !== null) {
 
-      if (password === storedPassword) {
-        savedUsername = username;
-        const resultTwo = await db.query("SELECT * FROM subscription WHERE username = $1", [
-          savedUsername
-        ]);
-        const userTwo = resultTwo.rows[0];
-        const useroption = userTwo.option;
-        savedOption = useroption;
+    try {
+      const result = await db.query("SELECT * FROM users WHERE username = $1", [
+        username,
+      ]);
+      if (result.rows.length > 0) {
+        const user = result.rows[0];
+        const storedPassword = user.password;
 
-        const resultThree = await db.query("SELECT * FROM coffee WHERE username = $1 AND dateperiod = $2", [
-          savedUsername, dateText
-        ]);
-        if (resultThree.rows.length > 0) {
-          const userThree = resultThree.rows[0];
-          savedCoffee = userThree.selection;
-          console.log(savedCoffee);
-          savedCoffee = JSON.parse(savedCoffee);
-          res.render('main.ejs', { username: savedUsername, defaultoption: savedOption, datePeriod: dateText, coffeeoption: savedCoffee });
+        if (password === storedPassword) {
+          savedUsername = username;
+          const resultTwo = await db.query("SELECT * FROM subscription WHERE username = $1", [
+            savedUsername
+          ]);
+          const userTwo = resultTwo.rows[0];
+          const useroption = userTwo.option;
+          savedOption = useroption;
+
+          const resultThree = await db.query("SELECT * FROM coffee WHERE username = $1 AND dateperiod = $2", [
+            savedUsername, dateText
+          ]);
+          if (resultThree.rows.length > 0) {
+            const userThree = resultThree.rows[0];
+            savedCoffee = userThree.selection;
+            console.log(savedCoffee);
+            savedCoffee = JSON.parse(savedCoffee);
+            res.render('main.ejs', { username: savedUsername, defaultoption: savedOption, datePeriod: dateText, coffeeoption: savedCoffee });
+          } else {
+            res.render('main.ejs', { username: savedUsername, defaultoption: savedOption, datePeriod: dateText });
+          }
         } else {
-          res.render('main.ejs', { username: savedUsername, defaultoption: savedOption, datePeriod: dateText });
+          savedUsername = "";
+          res.render("index.ejs", { errorMessage: "Incorrect Password" });
         }
       } else {
         savedUsername = "";
-        res.render("index.ejs", { errorMessage: "Incorrect Password" });
+        res.render("index.ejs", { errorMessage: "User not found" });
       }
-    } else {
-      savedUsername = "";
-      res.render("index.ejs", { errorMessage: "User not found" });
+    } catch (err) {
+      console.log(err);
     }
-  } catch (err) {
-    console.log(err);
+  } else {
+    res.render("index.ejs", { errorMessage: "Missing Information" });
   }
 });
 
